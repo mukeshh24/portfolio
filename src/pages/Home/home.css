@@ -31,7 +31,7 @@
 
 .personal-main-container .personal-container-row {
   max-width: 1250px;
-  max-height: 850px;
+  max-height: 750px;
   width: 100%;
   height: 100%;
   background-color: var(--theme-bg-color);
@@ -226,7 +226,9 @@ nav .left-side-body-block-link {
   background: rgb(0, 140, 255);
   border-radius: 50px;
   cursor: pointer;
-  font-size: 0.7rem;border: 0;outline: 0;
+  font-size: 0.7rem;
+  border: 0;
+  outline: 0;
 }
 
 .about-block .about-block-img {
@@ -468,6 +470,13 @@ nav .left-side-body-block-link {
 }
 
 @media screen and (max-width: 575px) {
+  .right-side-body .about-block,
+  .jobs-block-row .jobs-content,
+  .projects-block-row .projects-content,
+  .education-block-row .education-content {
+    padding: 1rem;
+  }
+
   .jobs-content .jobs-content-header {
     flex-direction: column;
     align-items: flex-start;
@@ -491,6 +500,7 @@ nav .left-side-body-block-link {
 
   .left-side-body {
     padding: 0.5rem;
+    gap: 0px;
   }
 
   .left-side-body-block .left-side-body-block-paragraph {
@@ -514,6 +524,7 @@ nav .left-side-body-block-link {
 
   .right-side-body {
     padding: 1rem;
+    padding-bottom: 5.5rem;
   }
 }
 
