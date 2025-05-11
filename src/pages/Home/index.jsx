@@ -33,6 +33,14 @@ const Home = () => {
         });
     }
   };
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="home-page">
       <div className="main-background">
@@ -63,14 +71,14 @@ const Home = () => {
                 <nav>
                   {navLinks.map((ele) => {
                     return (
-                      <a
-                        href={ele.link}
+                      <button
                         key={ele.id}
                         className="left-side-body-block-link"
+                        onClick={() => scrollToSection(ele.link.replace("#", ""))}
                       >
                         <img src={ele.icon} alt={ele.title} />
                         <p>{ele.title}</p>
-                      </a>
+                      </button>
                     );
                   })}
                 </nav>
@@ -81,8 +89,9 @@ const Home = () => {
                   {socialLinks.map((ele) => {
                     return (
                       <a
-                        href={ele.title}
                         key={ele.id}
+                        href={ele.link}
+                        target="blank"
                         className="left-side-body-block-link"
                       >
                         <img src={ele.icon} alt={ele.title} />
@@ -103,23 +112,24 @@ const Home = () => {
                 <div className="about-info-block">
                   <h1>Mukesh Suthar</h1>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-                    eligendi, adipisci autem cupiditate mollitia, accusamus
-                    quasi, nobis obcaecati iste architecto non deserunt eius
-                    modi illo cumque similique recusandae ea neque. Unde sunt,
-                    modi, doloribus error corrupti, delectus itaque impedit ad
-                    sequi at laudantium. Amet sapiente eos corrupti unde,
-                    mollitia fuga facere porro aut aperiam at. Nemo vitae
-                    facilis consequuntur cumque illum odio ad tempore vero, eos
-                    omnis, rem consequatur nisi architecto accusantium
-                    perspiciatis optio aliquid animi nesciunt. Tenetur sint
-                    consequatur hic, voluptas harum voluptatem fuga optio qui
-                    itaque natus delectus sit? Consequatur magnam similique
-                    facere autem earum enim aut aperiam.
+                    Innovative and detail-oriented Web Developer with 3 years of
+                    hands-on experience in building responsive,
+                    high-performance, and user-friendly web applications.
+                    Skilled in ReactJS, Bootstrap, Tailwind CSS, and modern
+                    front-end workflows. Strong expertise in debugging,
+                    cross-browser development, and UI/UX optimization.
+                    Passionate about translating design into clean, scalable
+                    code and delivering seamless digital experiences. Seeking to
+                    contribute to a dynamic team and build impactful web
+                    solutions.
                   </p>
-                  <button to={"/"} className="about-download-btn">
+                  <a
+                    href={"./new-cv-2025.pdf"}
+                    download
+                    className="about-download-btn"
+                  >
                     Download Resume
-                  </button>
+                  </a>
                 </div>
                 <img
                   src="./front-end-developer.png"
@@ -145,7 +155,12 @@ const Home = () => {
                 <div className="jobs-block-row">
                   {jobsData.map((ele) => {
                     return (
-                      <div key={ele.id} className="jobs-content">
+                      <a
+                        key={ele.id}
+                        href={ele.companyLink}
+                        target="blank"
+                        className="jobs-content"
+                      >
                         <div className="jobs-content-header">
                           <div className="jobs-content-header-left">
                             <img src={ele.companyLogo} alt={ele.title} />
@@ -156,14 +171,14 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="jobs-content-body">
-                          <p>{ele.companyOneLIne}</p>
+                          {/* <p>{ele.companyOneLIne}</p> */}
                           <ul>
                             {ele.companyPoints.map((point) => {
                               return <li key={point.id}>{point.title}</li>;
                             })}
                           </ul>
                         </div>
-                      </div>
+                      </a>
                     );
                   })}
                 </div>
@@ -189,7 +204,7 @@ const Home = () => {
                       <img src="./bvu.png" alt="" />
                       <div>
                         <h5>Bachelor of Computer Application</h5>
-                        <h6>Bharati Vidyapeeth University</h6>
+                        <h6>Bharati Vidyapeeth Deemed University</h6>
                       </div>
                     </div>
                     <div className="education-content-right-block">

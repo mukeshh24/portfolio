@@ -121,14 +121,13 @@
 nav .left-side-body-block-link {
   padding: 0.8rem;
   width: 100%;
-}
-
-.left-side-body-block-link {
   display: flex;
   align-items: center;
   gap: 0.7rem;
   text-decoration: none;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem;    border: 0px;
+    outline: 0px;
+    background: unset;cursor: pointer;
 }
 
 .left-side-body-block-link img {
@@ -217,6 +216,7 @@ nav .left-side-body-block-link {
   margin-bottom: 20px;
   font-weight: normal;
   font-size: 0.9rem;
+  text-align: justify;
 }
 
 .about-info-block .about-download-btn {
@@ -232,8 +232,9 @@ nav .left-side-body-block-link {
 }
 
 .about-block .about-block-img {
-  width: 350px;
+  width: 200px;
   max-width: 100%;
+  margin-left: 2rem;
 }
 
 .skills-block {
@@ -303,6 +304,8 @@ nav .left-side-body-block-link {
   border-radius: 1.5rem;
   background-color: var(--theme-bg-color);
   padding: 2rem;
+  width: 100%;
+  text-decoration: none;
 }
 
 .jobs-content .jobs-content-header {
@@ -334,7 +337,7 @@ nav .left-side-body-block-link {
 }
 
 .jobs-content-header-right p {
-  color: var(--item-acc-color);
+  color: #ffffff91;
   font-weight: normal;
   font-size: 0.9rem;
 }
@@ -353,13 +356,15 @@ nav .left-side-body-block-link {
 }
 
 .jobs-content-body ul {
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
 }
 
 .jobs-content-body ul li {
   color: var(--item-acc-color);
   font-weight: normal;
   font-size: 0.9rem;
+  margin-bottom: 5px;
+  text-align: justify;
 }
 
 .projects-block {
@@ -393,7 +398,7 @@ nav .left-side-body-block-link {
 
 .projects-content h5 {
   color: var(--item-acc-color);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -402,6 +407,7 @@ nav .left-side-body-block-link {
   color: var(--item-acc-color);
   font-weight: normal;
   font-size: 0.9rem;
+  text-align: justify;
 }
 
 .education-block {
@@ -447,7 +453,7 @@ nav .left-side-body-block-link {
 }
 
 .education-content-left-block h6 {
-  color: #ffffff94;
+  color: #ffffff91;
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -483,7 +489,16 @@ nav .left-side-body-block-link {
     gap: 0.3rem;
   }
 
+  .jobs-content-header .jobs-content-header-right {
+    text-align: right;
+    width: 100%;
+  }
+
   .projects-block .projects-block-row {
+    flex-direction: column;
+  }
+
+  .education-block-row .education-content {
     flex-direction: column;
   }
 }
@@ -526,6 +541,10 @@ nav .left-side-body-block-link {
     padding: 1rem;
     padding-bottom: 5.5rem;
   }
+
+  .jobs-content-body ul {
+    padding-left: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 1050px) {
@@ -542,6 +561,7 @@ nav .left-side-body-block-link {
   .about-block .about-block-img {
     width: 100%;
     order: 1;
+    margin-left: 0px;
   }
 
   .about-block .about-info-block {
